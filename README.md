@@ -1,16 +1,59 @@
-# React + Vite
+# Web Fundamentals Accordion
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small React + Vite app that presents a clean, interactive accordion for core web development topics: HTML, CSS, and JavaScript.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is a simple learning-focused UI that lets users expand and collapse sections to reveal short explanations of each topic. It uses accessible accordion behavior with keyboard-friendly buttons and ARIA attributes.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Expand/collapse individual content panels
+- Clear visual hierarchy with an editorial-style design
+- Responsive layout for desktop and mobile screens
+- Accessible interactions using `aria-expanded`, `aria-controls`, and `role="region"`
+- Lightweight React implementation with Vite for fast local development
 
-## Expanding the Oxlint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React 19
+- Vite
+- CSS for styling and responsive layout
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+4. Preview the production build:
+   ```bash
+   npm run preview
+   ```
+
+## Project Structure
+
+```text
+src/
+  App.jsx
+  App.css
+  accordian.jsx
+  main.jsx
+```
+
+The `Accordion` component manages the open/closed state for each section and renders the content panels.
+
+## Notes
+
+This app is intended as a front-end UI exercise and can be extended with more topics, animations, or a single-open/always-open accordion pattern.
