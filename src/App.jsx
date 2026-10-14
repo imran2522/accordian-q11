@@ -1,4 +1,4 @@
-import Accordion from './accordion';
+import Accordion from './accordian';
 import './App.css';
 
 export default function App() {
