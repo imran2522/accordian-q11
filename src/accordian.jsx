@@ -19,15 +19,15 @@ const SECTIONS = [
 ];
 
 export default function Accordion() {
-  // Use a Set to keep track of indices of expanded sections
+  // Use a Set to keep track of expanded section IDs
   const [expandedSections, setExpandedSections] = useState(new Set());
 
-  const toggleSection = (index) => {
+  const toggleSection = (sectionId) => {
     const nextExpanded = new Set(expandedSections);
-    if (nextExpanded.has(index)) {
-      nextExpanded.delete(index); // Collapse if already open
+    if (nextExpanded.has(sectionId)) {
+      nextExpanded.delete(sectionId); // Collapse if already open
     } else {
-      nextExpanded.add(index); // Expand if closed
+      nextExpanded.add(sectionId); // Expand if closed
     }
     setExpandedSections(nextExpanded);
   };
@@ -43,8 +43,8 @@ export default function Accordion() {
           </p>
         </header>
         <div className="accordion-list">
-          {SECTIONS.map((section, index) => {
-            const isExpanded = expandedSections.has(index);
+          {SECTIONS.map((section) => {
+            const isExpanded = expandedSections.has(section.id);
             const panelId = `section-content-${section.id}`;
             const triggerId = `section-trigger-${section.id}`;
 
@@ -54,7 +54,7 @@ export default function Accordion() {
                   id={triggerId}
                   className="accordion-trigger"
                   type="button"
-                  onClick={() => toggleSection(index)}
+                  onClick={() => toggleSection(section.id)}
                   aria-expanded={isExpanded}
                   aria-controls={panelId}
                 >
